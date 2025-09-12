@@ -1,31 +1,24 @@
 package org.example;
 
 import javax.swing.*;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Clase que representa la ventana de Login del Casino Black Cat.
- * Permite ingresar credenciales para acceder al sistema.
- */
-public class VentanaLogin {
-    // --- Lista dinámica de usuarios ---
+public class VentanaRegistro {
     public static final List<Usuario> USUARIOS = new ArrayList<>();
     USUARIOS.add("Donnie");
     // --- UI ---
-    private final JFrame frame = new JFrame("Login - Casino Black Cat");
+    private final JFrame frame = new JFrame("Registro - Casino Black Cat");
     private final JLabel lblUsuario = new JLabel("Usuario:");
     private final JTextField txtUsuario = new JTextField();
     private final JLabel lblClave = new JLabel("Clave:");
     private final JPasswordField txtClave = new JPasswordField();
-    private final JButton btnIngresar = new JButton("Ingresar");
     private final JButton btnRegistrar = new JButton("Registarse");
     /**
      * Constructor que inicializa la ventana de login.
      * Configura el tamaño, los componentes y los eventos.
      */
-    public VentanaLogin() {
+    public VentanaRegistro() {
 // TODO: inicializar usuarios hardcodeados
         frame.setSize(400,250);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,8 +27,7 @@ public class VentanaLogin {
         txtUsuario.setBounds(50,55,150,25);
         lblClave.setBounds(50,80,150,25);
         txtClave.setBounds(50,105,150,25);
-        btnIngresar.setBounds(250,150,100,30);
-        btnRegistrar.setBounds(100,150,100,30);
+        btnRegistrar.setBounds(250,150,100,30);
     }
 
     /**
@@ -47,21 +39,7 @@ public class VentanaLogin {
         frame.add(lblUsuario);
         frame.add(txtUsuario);
         frame.add(txtClave);
-        frame.add(btnIngresar);
         frame.setVisible(true);
-        btnIngresar.addActionListener(e-> getDatos());
-        btnRegistrar.addActionListener(e->abrirRegistro());
-    new VentanaLogin();
-    }
-
-    public void getDatos() {
-        String usuario = txtUsuario.getText();
-        String clave = Arrays.toString(txtClave.getPassword());
-    }
-    public void autenticarDatos() {
-        LoginControlador.autenticar(usuario, clave);
-    }
-    public void abrirRegistro() {
-        LoginControlador.abrirRegistro();
+        new VentanaRegistro();
     }
 }
