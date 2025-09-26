@@ -1,23 +1,27 @@
-package org.example;
+package controlador;
+
+import modelo.Usuario;
+import vista.VentanaLogin;
+import vista.VentanaRegistro;
+
 
 import javax.swing.*;
 
 public class LoginControlador {
-    public Usuario autenticar(String usuario, String clave) {
+    public static Usuario autenticar(String usuario, String clave) {
         for (Usuario u : VentanaLogin.USUARIOS) {
             if (u.getNombre().equals(usuario) && u.getPassword().equals(clave)) {
                 return u;
             }
         }
-        Usuario Usuario = null;
-        return (Usuario); }
+        return (null); }
 
     private String validarCredenciales(String u, String p) {
         // TODO: recorrer arreglo y validar credenciales
         return "";
     }
 
-    public void abrirRegistro() {
+    public static void abrirRegistro() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

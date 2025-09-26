@@ -1,4 +1,4 @@
-package org.example;
+package modelo;
 public class Usuario {
     private String username;
     private String password;

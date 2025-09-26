@@ -1,5 +1,6 @@
-package org.example;
-import org.example.VentanaLogin;
+package launcher;
+import vista.VentanaLogin;
+import vista.VentanaRegistro;
 
 import javax.swing.*;
 

@@ -1,12 +1,15 @@
-package org.example;
+package vista;
 
+import modelo.Usuario;
+import vista.VentanaMenu;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class VentanaRegistro {
     public static final List<Usuario> USUARIOS = new ArrayList<>();
-    USUARIOS.add("Donnie");
+
     // --- UI ---
     private final JFrame frame = new JFrame("Registro - Casino Black Cat");
     private final JLabel lblUsuario = new JLabel("Usuario:");
@@ -39,7 +42,10 @@ public class VentanaRegistro {
         frame.add(lblUsuario);
         frame.add(txtUsuario);
         frame.add(txtClave);
+        frame.add(btnRegistrar);
         frame.setVisible(true);
         new VentanaRegistro();
+
+        USUARIOS.add(new Usuario(txtUsuario.getText(), Arrays.toString(txtClave.getPassword()), txtUsuario.getText()));
     }
 }

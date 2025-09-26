@@ -1,5 +1,7 @@
-package org.example;
+package vista;
 
+import modelo.Usuario;
+import controlador.LoginControlador;
 import javax.swing.*;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +14,8 @@ import java.util.ArrayList;
 public class VentanaLogin {
     // --- Lista dinámica de usuarios ---
     public static final List<Usuario> USUARIOS = new ArrayList<>();
-    USUARIOS.add("Donnie");
+    private String usuario;
+    private String clave;
     // --- UI ---
     private final JFrame frame = new JFrame("Login - Casino Black Cat");
     private final JLabel lblUsuario = new JLabel("Usuario:");
@@ -48,17 +51,21 @@ public class VentanaLogin {
         frame.add(txtUsuario);
         frame.add(txtClave);
         frame.add(btnIngresar);
+        frame.add(btnRegistrar);
         frame.setVisible(true);
         btnIngresar.addActionListener(e-> getDatos());
         btnRegistrar.addActionListener(e->abrirRegistro());
+        btnRegistrar.addActionListener(e-> frame.dispose());
     new VentanaLogin();
     }
 
     public void getDatos() {
-        String usuario = txtUsuario.getText();
-        String clave = Arrays.toString(txtClave.getPassword());
+        this.usuario = txtUsuario.getText();
+        this.clave = Arrays.toString(txtClave.getPassword());
+
     }
     public void autenticarDatos() {
+        getDatos();
         LoginControlador.autenticar(usuario, clave);
     }
     public void abrirRegistro() {

@@ -1,4 +1,4 @@
-package org.example;
+package controlador;
 
 public class RuletaControlador {
 }
