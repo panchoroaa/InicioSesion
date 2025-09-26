@@ -16,6 +16,7 @@ public class VentanaLogin {
     public static final List<Usuario> USUARIOS = new ArrayList<>();
     private String usuario;
     private String clave;
+    private String nombre;
     // --- UI ---
     private final JFrame frame = new JFrame("Login - Casino Black Cat");
     private final JLabel lblUsuario = new JLabel("Usuario:");
@@ -59,16 +60,18 @@ public class VentanaLogin {
     new VentanaLogin();
     }
 
+    private void abrirRegistro() {
+        LoginControlador.abrirRegistro();
+    }
+
     public void getDatos() {
         this.usuario = txtUsuario.getText();
         this.clave = Arrays.toString(txtClave.getPassword());
+        this.nombre = txtUsuario.getText();
 
-    }
     public void autenticarDatos() {
         getDatos();
-        LoginControlador.autenticar(usuario, clave);
+        LoginControlador.autenticar(usuario, clave, nombre);
     }
-    public void abrirRegistro() {
-        LoginControlador.abrirRegistro();
     }
 }
