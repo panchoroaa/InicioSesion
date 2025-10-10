@@ -68,10 +68,9 @@ public class VentanaLogin {
         this.usuario = txtUsuario.getText();
         this.clave = Arrays.toString(txtClave.getPassword());
         this.nombre = txtUsuario.getText();
-
+    }
     public void autenticarDatos() {
         getDatos();
         LoginControlador.autenticar(usuario, clave, nombre);
-    }
     }
 }

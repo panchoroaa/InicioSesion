@@ -46,11 +46,11 @@ public class VentanaRegistro {
         frame.setVisible(true);
         new VentanaRegistro();
     }
-    public Usuario UsuarioARegistro() {
+
+    public void getDatos() {
         this.usuario = txtUsuario.getText();
         this.clave = Arrays.toString(txtClave.getPassword());
         this.nombre = txtUsuario.getText();
-        return new Usuario(this.usuario, this.clave, this.nombre);
     }
 
 }

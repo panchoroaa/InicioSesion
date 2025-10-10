@@ -33,7 +33,7 @@ public class LoginControlador {
 
     private void registrarUsuario(){
         final List<Usuario> USUARIOS = new ArrayList<>();
-        USUARIOS.add(new VentanaRegistro.UsuarioARegistro());
+        USUARIOS.add(new Usuario(VentanaRegistro.getDatos()));
     }
 }
 
